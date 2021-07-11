@@ -5,11 +5,24 @@ const Campus = db.define("campus", {
 
   name: {
     type: Sequelize.STRING,
-    allowNull: false
+  },
+
+  imageUrl:{
+    type: Sequelize.STRING,
+    defaultValue: "https://picsum.photos/200/300",
+
+  },
+
+  address:{
+    type: Sequelize.STRING,
+
+    validate: {
+      notEmpty: true,
+    }
   },
 
   description: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
   }
 
 });

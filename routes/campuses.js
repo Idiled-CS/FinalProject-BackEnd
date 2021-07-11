@@ -7,6 +7,7 @@ const ash = require('express-async-handler');
 /** GET ALL CAMPUSES */
 
 router.get('/', ash(async(req, res) => {
+  console.log(req)
   let campuses = await Campus.findAll({include: [Student]});
   res.status(200).json(campuses);
 }));
